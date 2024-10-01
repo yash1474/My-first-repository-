@@ -1,0 +1,10 @@
+#!/bin/bash
+read -p "enter distance in km:" d
+m=$(echo "$d * 1000" | bc)
+cm=$(echo "$m * 100" | bc)
+feet=$(echo "$d * 3280.8399" | bc)
+inches=$(echo "$feet * 12" | bc)
+echo "meter : $m"
+echo "Centimeter : $cm"
+echo "feet : $feet"
+echo "inches : $inches"
