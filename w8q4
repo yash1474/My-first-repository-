@@ -1,0 +1,13 @@
+
+echo -n "Enter the Basic Salary: "
+ read basic_salary
+ if [ $basic_salary -lt 1500 ] 
+then
+    hra=$(echo "$basic_salary * 0.10" | bc)
+    da=$(echo "$basic_salary * 0.90" | bc)
+ else
+    hra=500
+    da=$(echo "$basic_salary * 0.98" | bc)
+ fi
+ gross_salary=$(echo "$basic_salary + $hra + $da" | bc)
+ echo "The Gross Salary is: $gross_salary"
